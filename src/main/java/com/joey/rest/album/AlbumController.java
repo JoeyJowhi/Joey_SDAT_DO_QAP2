@@ -44,13 +44,13 @@ import java.util.List;
 
 
     //PUT Routes
-    @PutMapping("/album/{id}") public ResponseEntity<Album> putAlbum(@PathVariable long albumId, @RequestBody Album updatedAlbum) {
+    @PutMapping("/album/{id}") public ResponseEntity<Album> putAlbum(@PathVariable("id") long albumId, @RequestBody Album updatedAlbum) {
         return ResponseEntity.ok(albumService.putAlbum(albumId, updatedAlbum));
     }
 
 
     //DELETE Routes
-    @DeleteMapping("/album/{id}") public void deleteAlbum(@PathVariable long albumId) {
+    @DeleteMapping("/album/{id}") public void deleteAlbum(@PathVariable("id") long albumId) {
         albumService.deleteAlbumById(albumId);
     }
 }
